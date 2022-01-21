@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Link for highscores -->
+    <a href="#">Click to View Highscores</a>
+
+    <div class="d-flex">
+        <div id="highscore-wrapper" class="wrapper container border border-danger p-10 m-10">
+            <div id="currentTime"></div>
+            <div id="questionsDiv">
+                <h1>Highscores</h1>
+                <ul id="highScore"></ul>
+                <button id="goBack">Return to Quiz</button>
+                <button id="clear" value="reset">Clear Highscores</button>
+            </div>
+        </div>
+
+
+        <div id="welcome-div" class="container bg-red border border-primary p-10 mt-10">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 bg-white">
+                    <h4 class="text-center">Welcome to the Quiz!<h4>
+
+                            <p>You have 75 seconds to answer the following questions. Answer as quickly as
+                                possible - your remaining time will be your score!</p>
+                            <p class="text-muted ">Careful - a 10 second penalty will be assessed for incorrect
+                                answers!</p>
+                            <button id="start-btn"
+                                class="text-center btn btn-success btn-lg justify-content-center align-items-center">Start</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="questions-div" class="container bg-yellow border border-secondary p-10">
+            <div class="row align-items-center col-12 justify-content-center">
+                <h5 class="col-12">This is the question</h5>
+                <button class="col-12">Answer 1</button>
+                <button class="col-12">Answer 2</button>
+                <button class="col-12">Answer 3</button>
+                <button class="col-12">Answer 4</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

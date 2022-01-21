@@ -1,0 +1,8 @@
+/* Hide the questions until start is clicked */
+#questions-div {
+    display: none;
+}
+
+button {
+    text-align: center;
+}
