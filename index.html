@@ -14,22 +14,50 @@
 <body>
 
     <!-- Header -->
-    <header id="header">
-        <a href="#" id="highscores">Click to View Highscores</a>
-        <p id="timer">Time Remaining:</p>
+    <header id="header" class="container">
+        <div class="row justify-content-around border border-primary align-items-center">
+            <a href="#" id="highscores">Click to View Highscores</a>
+            <p id="timer" class="mt-2">Time Remaining:</p>
+        </div>
     </header>
 
     <!-- Welcome page -->
-    <main id="main" class="wrapper container border border-danger p-10 m-10">
+    <main id="main" class="wrapper container border border-primary p-10 m-10">
         <h1>Welcome to the Coding Quiz!</h1>
         <p>You wil be given 75 seconds to answer the following questions. The quicker you answer, the higher your score!
         </p>
         <p class="text-muted">But be warned: for every incorrect answer, you will lose 10 points!</p>
-        <button class="buttons" id="begin">Begin Quiz!</button>
+        <button class="buttons btn btn-primary btn-block mb-3" id="begin">Begin Quiz!</button>
     </main>
 
+    <!-- Questions layout -->
+    <div class="quiz container border border-primary">
+        <div class="row d-block align-items-center justify-content-center">
+            <p class="col-sm-9 question mt-3">Question</p>
 
-    
+            <div class="row justify-content-center">
+                <button class="buttons btn btn-danger col-9" id="answerA">A. </button>
+                <button class="buttons btn btn-danger col-9" id="answerB">B. </button>
+                <button class="buttons btn btn-danger col-9" id="answerC">C. </button>
+                <button class="buttons btn btn-danger col-9 mb-3" id="answerD">D. </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final score/initials/submit score -->
+    <div class="gameEnd border border-danger p-3 container">
+        <h3>Congratulations!</h3>
+        <p id="finalScore"></p>
+
+        <div id="initialsDetails">
+            <form id="highscoreDetails">
+                <label for="initials">Enter your initials:</label>
+                <input type="text" id="initials" />
+                <button type="submit" class="buttons" id="submitBtn">Submit Now</button>
+            </form>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
