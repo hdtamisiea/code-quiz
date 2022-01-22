@@ -3,6 +3,10 @@
     display: none;
 }
 
-.buttons {
-    text-align: center;
+header {
+    background: linear-gradient(red 0%, orange 25%, yellow 50%, orange 75%, red 100%);
+}
+
+.gameEnd {
+    background:linear-gradient(blue 0%,rgb(14, 248, 236) 25%, rgb(171, 243, 239) 50%, rgb(14, 248, 236) 75%, blue 100%);
 }

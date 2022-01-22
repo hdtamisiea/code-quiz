@@ -15,15 +15,15 @@
 
     <!-- Header -->
     <header id="header" class="container">
-        <div class="row justify-content-around border border-primary align-items-center">
+        <div class="row justify-content-around border border-primary">
             <a href="#" id="highscores">Click to View Highscores</a>
             <p id="timer" class="mt-2">Time Remaining:</p>
         </div>
     </header>
 
     <!-- Welcome page -->
-    <main id="main" class="wrapper container border border-primary p-10 m-10">
-        <h1>Welcome to the Coding Quiz!</h1>
+    <main id="main" class="wrapper container border border-primary p-10 m-10 align-items-center text-center">
+        <h1 class="text-center">Welcome to the Coding Quiz!</h1>
         <p>You wil be given 75 seconds to answer the following questions. The quicker you answer, the higher your score!
         </p>
         <p class="text-muted">But be warned: for every incorrect answer, you will lose 10 points!</p>
@@ -45,7 +45,7 @@
     </div>
 
     <!-- Final score/initials/submit score -->
-    <div class="gameEnd border border-danger p-3 container">
+    <div class="gameEnd border border-danger p-3 container text-center">
         <h3>Congratulations!</h3>
         <p id="finalScore"></p>
 
@@ -59,7 +59,7 @@
     </div>
 
     <!-- Highscore/Leader Board -->
-    <div class="highscoresDiv">
+    <div class="highscoresDiv container border border-success p-3">
         <h2 id="highscoresText">Highscores</h2>
         <div id="highscoresInfo"></div>
         <button id="returnBtn">Return to Quiz</button>
