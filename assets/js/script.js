@@ -8,6 +8,7 @@ var answerA = document.querySelector("#answerA");
 var answerB = document.querySelector("#answerB");
 var answerC = document.querySelector("#answerC");
 var answerD = document.querySelector("#answerD");
+var gradeDiv = document.querySelector("#grade")
 var gameEnd = document.querySelector(".gameEnd");
 var finalScore = document.querySelector("#finalScore");
 var initialsDetails = document.querySelector("#initialsDetails");
@@ -20,10 +21,11 @@ var highscoresInfo = document.querySelector("#highscoresInfo");
 var returnBtn = document.querySelector("#returnBtn");
 var clearBtn = document.querySelector("#clearBtn");
 
-var lastQuest = question.length -1;
+var lastQuest = question.length - 1;
 var timeLeft = timer;
 var currentQuest = 0;
 var timeInterval;
+
 
 // Array of questions
 var questions = [
@@ -73,28 +75,29 @@ var questions = [
     },
 ];
 
+
 // Begin Quiz
 function startQuiz() {
     timeLeft = 75;
     main.style.display = "block";
-    checkAnswer.style.display = "none";
+    gradeDiv.style.display = "none";
     gameEnd.style.display = "none";
     highscoresDiv.style.display = "none";
     quiz.style.display = "none";
 
-    highscores.textContent = "View High Scores";
     timer.textContent = 'Time Remaining: ' + timeLeft;
     currentQuest = 0;
+
 };
 
 begin.onclick = countdown;
 
 // Function to begin countdown and stop when countdown reaches zero
 function countdown() {
-    timeInterval = setInterval(function() {
-        if(timeLeft > 0) {
+    timeInterval = setInterval(function () {
+        if (timeLeft > 0) {
             timer.textContent = "Time Remaining: " + timeLeft;
-            timeLeft --;
+            timeLeft--;
         } else {
             timer.textContent = "Time Remaining: " + timeLeft;
             clearInterval(timeInterval);
@@ -104,14 +107,11 @@ function countdown() {
     quizQuestions();
 };
 
-// Present questions
+// Questions
 function quizQuestions() {
     main.style.display = "none";
-    header.style.display = "block";
     quiz.style.display = "block";
-    gameEnd.style.display = "none";
-    highscoresDiv.style.display = "none";
-
+    
     var quest = questions[currentQuest];
 
     question.textContent = quest.q1;
@@ -124,13 +124,13 @@ function quizQuestions() {
 //  Check Answers
 function grade(answer) {
     // Is answer correct?
-    if(answer === questions[currentQuest].correctAnswer){
+    if (answer === questions[currentQuest].correctAnswer) {
         answerIsCorrect();
     } else {
         answerIsWrong();
     }
     // If more questions - go to next question
-    if(currentQuest < lastQuest) {
+    if (currentQuest < lastQuest) {
         currentQuest++;
         quizQuestions();
         // If there are no more questions, the game is over
@@ -143,14 +143,14 @@ function grade(answer) {
 
 // If answer is correct:
 function answerIsCorrect() {
-    checkAnswer.textContent = "Great job!";
-    checkAnswer.style.display = "block";
+    gradeDiv.textContent = "Great job!";
+    gradeDiv.style.display = "block";
 };
 
 // If answer is wrong:
 function answerIsWrong() {
-    checkAnswer.textContent = "Sorry - 10 points deducted for incorrect answer!";
-    checkAnswer.style.display = "block";
+    gradeDiv.textContent = "Sorry - 10 points deducted for incorrect answer!";
+    gradeDiv.style.display = "block";
     timeLeft = timeLeft - 10;
 };
 
@@ -162,34 +162,70 @@ function gameOver() {
     quiz.style.display = "none";
     gameEnd.style.display = "block";
     highscoresDiv.style.display = "none";
-    
+
     finalScore.textContent = "Your score is " + timeLeft;
 };
 
 // Capturing initials and score when game over
-submitBtn.addEventListener("click", function(event) {
+submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
-    var enteredInitials = initialsEntered.value;
+    var enteredInitials = initials.value;
     clearInterval(timeInterval);
 
     if (enteredInitials) {
         var storedInitials = JSON.parse(localStorage.getItem("score")) || [];
 
         storedInitials.push(enteredInitials + " - " + timeLeft);
-        highscoresSec();
+
+        localStorage.setItem("score", JSON.stringify(storedInitials));
+        highscoresSection();
     } else if (enteredInitials === "" || enteredInitials === null) {
         alert("Please enter your initials!");
     }
 });
 
 // Clear highscores button clicked
-clearBtn.addEventListener("click", function() {
+clearBtn.addEventListener("click", function () {
     highscoresInfo.textContent = "";
     localStorage.clear();
 })
 
-highscores.addEventListener("click", function() {
+// Go back button clicked
+returnBtn.addEventListener("click", function () {
     startQuiz();
     timer.style.display = "block";
+})
+
+// view highscores
+highscores.addEventListener("click", function () {
+    highscoresSection();
 });
+
+// Leaderboard
+var highscoresSection = function () {
+    gradeDiv.style.display = "none";
+    gameEnd.style.display = "none";
+    main.style.display = "none";
+    quiz.style.display = "none";
+    highscores.textContent = "";
+    timer.style.display = "none";
+    highscoresDiv.style.display = "block";
+
+    if (localStorage.getItem("score") === null) {
+        list.textContent = "";
+
+        var storedInitials = JSON.parse(localStorage.getItem("score")) || [];
+
+        for (i = 0; i < storedInitials.length; i++) {
+            var list = document.createElement("li");
+            var hsInfo = storedInitials[i];
+            list.textContent = hsInfo;
+            highscoresInfo.appendChild(list);
+        }
+    };
+}
+
+startQuiz();
+
+
 
