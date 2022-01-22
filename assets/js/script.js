@@ -83,7 +83,7 @@ function startQuiz() {
     quiz.style.display = "none";
 
     highscores.textContent = "View High Scores";
-    timer.textContent = "Time Remaining: " + timeLeft;
+    timer.textContent = 'Time Remaining: ' + timeLeft;
     currentQuest = 0;
 };
 
@@ -142,4 +142,28 @@ function grade(answer) {
 }
 
 // If answer is correct:
-function answerIsCorrect()
+function answerIsCorrect() {
+    checkAnswer.textContent = "Great job!";
+    checkAnswer.style.display = "block";
+};
+
+// If answer is wrong:
+function answerIsWrong() {
+    checkAnswer.textContent = "Sorry - 10 points deducted for incorrect answer!";
+    checkAnswer.style.display = "block";
+    timeLeft = timeLeft - 10;
+};
+
+// Game over function
+var finalScore;
+function gameOver() {
+    header.style.display = "block";
+    main.style.display = "none";
+    quiz.style.display = "none";
+    gameEnd.style.display = "block";
+    highscoresDiv.style.display = "none";
+    
+    finalScore.textContent = "Your score is " + timeLeft;
+};
+
+// 
