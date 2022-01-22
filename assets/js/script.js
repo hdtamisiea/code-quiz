@@ -103,3 +103,20 @@ function countdown() {
     }, 1000);
     quizQuestions();
 };
+
+// Present questions
+function quizQuestions() {
+    main.style.display = "none";
+    header.style.display = "block";
+    quiz.style.display = "block";
+    gameEnd.style.display = "none";
+    highscoresDiv.style.display = "none";
+
+    var quest = questions[currentQuest];
+
+    question.textContent = quest.q1;
+    answerA.textContent = 'A. ' + quest.a1;
+    answerB.textContent = 'B. ' + quest.a2;
+    answerC.textContent = 'C. ' + quest.a3;
+    answerD.textContent = 'D. ' + quest.a4;
+};
