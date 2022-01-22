@@ -12,46 +12,58 @@
 </head>
 
 <body>
-    <!-- Link for highscores -->
-    <a href="#">Click to View Highscores</a>
 
-    <div class="d-flex">
-        <div id="highscore-wrapper" class="wrapper container border border-danger p-10 m-10">
-            <div id="currentTime"></div>
-            <div id="questionsDiv">
-                <h1>Highscores</h1>
-                <ul id="highScore"></ul>
-                <button id="goBack">Return to Quiz</button>
-                <button id="clear" value="reset">Clear Highscores</button>
+    <!-- Header -->
+    <header id="header">
+        <a href="#" id="highscores">Click to View Highscores</a>
+        <p id="timer">Time Remaining:</p>
+    </header>
+
+    <!-- Welcome page -->
+    <main id="main" class="wrapper container border border-danger p-10 m-10">
+        <h1>Welcome to the Coding Quiz!</h1>
+        <p>You wil be given 75 seconds to answer the following questions. The quicker you answer, the higher your score!
+        </p>
+        <p class="text-muted">But be warned: for every incorrect answer, you will lose 10 points!</p>
+        <button class="buttons" id="begin">Begin Quiz!</button>
+    </main>
+
+
+    <!-- Questions -->
+    <div class="quiz container bg-red border border-primary p-10 mt-10">
+        <div class="row align-items-center justify-content-center">
+            <p class="question">Question</p>
+            <div>
+                <button class="buttons" id="answerA" onclick="grade('answerA')">A. </button>
+                <button class="buttons" id="answerB" onclick="grade('answerB')">B. </button>
+                <button class="buttons" id="answerC" onclick="grade('answerC')">C. </button>
+                <button class="buttons" id="answerD" onclick="grade('answerD')">D. </button>
             </div>
         </div>
+    </div>
 
+    <!-- Final score/initials/submit score -->
+    <div class="gameEnd">
+        <h3>Congratulations!</h3>
+        <p id="finalScore"></p>
 
-        <div id="welcome-div" class="container bg-red border border-primary p-10 mt-10">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 bg-white">
-                    <h4 class="text-center">Welcome to the Quiz!<h4>
-
-                            <p>You have 75 seconds to answer the following questions. Answer as quickly as
-                                possible - your remaining time will be your score!</p>
-                            <p class="text-muted ">Careful - a 10 second penalty will be assessed for incorrect
-                                answers!</p>
-                            <button id="start-btn"
-                                class="text-center btn btn-success btn-lg justify-content-center align-items-center">Start</button>
-                </div>
-            </div>
-
+        <div id="initialsDetails">
+            <form id="highscoreDetails">
+                <label for="initials">Enter your initials!</label>
+                <input type="text" initials="initials" id="initials" class="form-input" />
+                <button type="submit" class="buttons" id="submitBtn">Submit Now</button>
+            </form>
         </div>
+    </div>
 
-        <div id="questions-div" class="container bg-yellow border border-secondary p-10">
-            <div class="row align-items-center col-12 justify-content-center">
-                <h5 class="col-12">This is the question</h5>
-                <button class="col-12">Answer 1</button>
-                <button class="col-12">Answer 2</button>
-                <button class="col-12">Answer 3</button>
-                <button class="col-12">Answer 4</button>
-            </div>
-        </div>
+    <div id="checkAnswer"></div>
+
+    <!-- Highscore Leader Board -->
+    <div class="highscoresDiv">
+        <h2 id="highscoresText">Highscores</h2>
+        <div id="highscoresInfo"></div>
+        <button class="buttons" id="returnBtn">Return to Quiz</button>
+        <button class="buttons" id="clearBtn">Clear All Scores</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
