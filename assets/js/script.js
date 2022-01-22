@@ -166,4 +166,30 @@ function gameOver() {
     finalScore.textContent = "Your score is " + timeLeft;
 };
 
-// 
+// Capturing initials and score when game over
+submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    var enteredInitials = initialsEntered.value;
+    clearInterval(timeInterval);
+
+    if (enteredInitials) {
+        var storedInitials = JSON.parse(localStorage.getItem("score")) || [];
+
+        storedInitials.push(enteredInitials + " - " + timeLeft);
+        highscoresSec();
+    } else if (enteredInitials === "" || enteredInitials === null) {
+        alert("Please enter your initials!");
+    }
+});
+
+// Clear highscores button clicked
+clearBtn.addEventListener("click", function() {
+    highscoresInfo.textContent = "";
+    localStorage.clear();
+})
+
+highscores.addEventListener("click", function() {
+    startQuiz();
+    timer.style.display = "block";
+});
+
