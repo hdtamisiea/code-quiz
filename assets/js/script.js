@@ -120,3 +120,26 @@ function quizQuestions() {
     answerC.textContent = 'C. ' + quest.a3;
     answerD.textContent = 'D. ' + quest.a4;
 };
+
+//  Check Answers
+function grade(answer) {
+    // Is answer correct?
+    if(answer === questions[currentQuest].correctAnswer){
+        answerIsCorrect();
+    } else {
+        answerIsWrong();
+    }
+    // If more questions - go to next question
+    if(currentQuest < lastQuest) {
+        currentQuest++;
+        quizQuestions();
+        // If there are no more questions, the game is over
+    } else {
+        timer.textContent = "Time Remaining: " + timeLeft;
+        clearInterval(timeInterval);
+        gameOver();
+    }
+}
+
+// If answer is correct:
+function answerIsCorrect()
