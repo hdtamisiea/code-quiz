@@ -29,43 +29,7 @@
     </main>
 
 
-    <!-- Questions -->
-    <div class="quiz container bg-red border border-primary p-10 mt-10">
-        <div class="row align-items-center justify-content-center">
-            <p class="question">Question</p>
-            <div>
-                <button class="buttons" id="answerA" onclick="grade('answerA')">A. </button>
-                <button class="buttons" id="answerB" onclick="grade('answerB')">B. </button>
-                <button class="buttons" id="answerC" onclick="grade('answerC')">C. </button>
-                <button class="buttons" id="answerD" onclick="grade('answerD')">D. </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Final score/initials/submit score -->
-    <div class="gameEnd">
-        <h3>Congratulations!</h3>
-        <p id="finalScore"></p>
-
-        <div id="initialsDetails">
-            <form id="highscoreDetails">
-                <label for="initials">Enter your initials!</label>
-                <input type="text" initials="initials" id="initials" class="form-input" />
-                <button type="submit" class="buttons" id="submitBtn">Submit Now</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="checkAnswer"></div>
-
-    <!-- Highscore Leader Board -->
-    <div class="highscoresDiv">
-        <h2 id="highscoresText">Highscores</h2>
-        <div id="highscoresInfo"></div>
-        <button class="buttons" id="returnBtn">Return to Quiz</button>
-        <button class="buttons" id="clearBtn">Clear All Scores</button>
-    </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
