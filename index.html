@@ -15,10 +15,8 @@
 
     <!-- Header -->
     <header id="header" class="container">
-        <div class="row justify-content-around border border-primary">
-            <a href="#" id="highscores">Click to View Highscores</a>
-            <p id="timer" class="mt-2">Time Remaining:</p>
-        </div>
+            <a href="#" id="highscores">Click here to view highscores.</a>
+            <p id="timer" class="mt-2">Time remaining: </p>
     </header>
 
     <!-- Welcome page -->
@@ -52,11 +50,13 @@
         <div id="initialsDetails">
             <form id="highscoreDetails">
                 <label for="initials">Enter your initials:</label>
-                <input type="text" id="initials" />
+                <input type="text" initials="initials" id="initials" class="form-input" />
                 <button type="submit" id="submitBtn">Submit Now</button>
             </form>
         </div>
     </div>
+
+    <div id="grade"></div>
 
     <!-- Highscore/Leader Board -->
     <div class="highscoresDiv d-none container border border-success p-3">
