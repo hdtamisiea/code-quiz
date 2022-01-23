@@ -12,15 +12,14 @@
 </head>
 
 <body>
-
-    <!-- Header -->
-    <header id="header" class="container">
-            <a href="#" id="highscores">Click here to view highscores.</a>
-            <p id="timer" class="mt-2">Time remaining: </p>
+    <!-- header -->
+    <header id="header" class="container d-flex justify-content-around mt-3">
+        <a href="#" id="highscores"></a>
+        <p id="timer"></p>
     </header>
 
-    <!-- Welcome page -->
-    <main id="main" class="wrapper container border border-primary p-10 m-10 align-items-center text-center">
+    <!-- landing information -->
+    <main id="main" class="wrapper container border border-primary p-10 m-10">
         <h1 class="text-center">Welcome to the Coding Quiz!</h1>
         <p>You wil be given 75 seconds to answer the following questions. The quicker you answer, the higher your score!
         </p>
@@ -28,42 +27,44 @@
         <button class="btn btn-primary btn-block mb-3" id="begin">Begin Quiz!</button>
     </main>
 
-    <!-- Questions layout -->
-    <div class="quiz d-none container border border-primary">
+    <!-- quiz section -->
+    <div class="quiz container border border-primary">
         <div class="row d-block align-items-center justify-content-center">
             <p class="col-sm-9 question mt-3">Question</p>
 
             <div class="row justify-content-center">
-                <button class="btn btn-danger col-9" id="answerA" onclick="grade('answerA')">A. </button>
-                <button class="btn btn-danger col-9" id="answerB" onclick="grade('answerB')">B. </button>
-                <button class="btn btn-danger col-9" id="answerC" onclick="grade('answerC')">C. </button>
+                <button class="btn btn-danger col-9 mb-2" id="answerA" onclick="grade('answerA')">A. </button>
+                <button class="btn btn-danger col-9 mb2" id="answerB" onclick="grade('answerB')">B. </button>
+                <button class="btn btn-danger col-9 mb2" id="answerC" onclick="grade('answerC')">C. </button>
                 <button class="btn btn-danger col-9 mb-3" id="answerD" onclick="grade('answerD')">D. </button>
             </div>
         </div>
     </div>
 
-    <!-- Final score/initials/submit score -->
-    <div class="gameEnd d-none border border-danger p-3 container text-center">
-        <h3>Congratulations!</h3>
-        <p id="finalScore"></p>
+        <!-- finish game score and form -->
+    <div class="gameEnd border border-danger p-3 container text-center">
+        <h3>Quiz is Complete!</h3>
+        <p id="yourScore"></p>
 
-        <div id="initialsDetails">
-            <form id="highscoreDetails">
+        <!-- Highscore form submit-->
+        <div>
+            <form> 
                 <label for="initials">Enter your initials:</label>
-                <input type="text" initials="initials" id="initials" class="form-input" />
-                <button type="submit" id="submitBtn">Submit Now</button>
+                <input type="text" initials="initials" id="initials" />
+                <button type="submit" id="submitBtn">Submit</button>
             </form>
         </div>
     </div>
 
     <div id="grade"></div>
 
-    <!-- Highscore/Leader Board -->
-    <div class="highscoresDiv d-none container border border-success p-3">
+    <!-- highscores section -->
+    <div class="highscoresDiv container border border-success p-3">
         <h2 id="highscoresText">Highscores</h2>
         <div id="highscoresInfo"></div>
-        <button id="returnBtn">Return to Quiz</button>
-        <button id="clearBtn">Clear All Scores</button>
+        <button id="returnBtn">Try the Quiz Again!</button>
+        <button id="clearHighscores">Clear All Scores</button>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
