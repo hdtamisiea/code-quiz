@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
+<body class="bg-secondary">
     <!-- header -->
-    <header id="header" class="container d-flex justify-content-around mt-3">
+    <header id="header" class="container d-flex justify-content-around mt-3 border border-primary align-items-center">
         <a href="#" id="highscores"></a>
         <p id="timer"></p>
     </header>
 
     <!-- landing information -->
-    <main id="main" class="wrapper container border border-primary p-10 m-10">
+    <main id="main" class="wrapper container border border-primary p-10 m-10 bg-white">
         <h1 class="text-center">Welcome to the Coding Quiz!</h1>
         <p>You wil be given 75 seconds to answer the following questions. The quicker you answer, the higher your score!
         </p>
@@ -28,14 +28,14 @@
     </main>
 
     <!-- quiz section -->
-    <div class="quiz container border border-primary">
+    <div class="quiz container border border-primary m-10 bg-white">
         <div class="row d-block align-items-center justify-content-center">
             <p class="col-sm-9 question mt-3">Question</p>
 
             <div class="row justify-content-center">
                 <button class="btn btn-danger col-9 mb-2" id="answerA" onclick="grade('answerA')">A. </button>
-                <button class="btn btn-danger col-9 mb2" id="answerB" onclick="grade('answerB')">B. </button>
-                <button class="btn btn-danger col-9 mb2" id="answerC" onclick="grade('answerC')">C. </button>
+                <button class="btn btn-danger col-9 mb-2" id="answerB" onclick="grade('answerB')">B. </button>
+                <button class="btn btn-danger col-9 mb-2" id="answerC" onclick="grade('answerC')">C. </button>
                 <button class="btn btn-danger col-9 mb-3" id="answerD" onclick="grade('answerD')">D. </button>
             </div>
         </div>
@@ -56,14 +56,14 @@
         </div>
     </div>
 
-    <div id="grade"></div>
+    <div id="grade" class="container bg-white mt-5 text-center font-weight-bold"></div>
 
     <!-- highscores section -->
-    <div class="highscoresDiv container border border-success p-3">
-        <h2 id="highscoresText">Highscores</h2>
+    <div class="highscoresDiv container border border-success p-3 text-center bg-white">
+        <h2 id="highscoresText" class="text-danger">Highscores</h2>
         <div id="highscoresInfo"></div>
-        <button id="returnBtn">Try the Quiz Again!</button>
-        <button id="clearHighscores">Clear All Scores</button>
+        <button id="returnBtn" class="btn btn-info">Try the Quiz Again!</button>
+        <button id="clearHighscores" class="btn btn-info">Clear All Scores</button>
 
     </div>
 

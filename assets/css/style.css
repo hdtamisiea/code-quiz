@@ -9,4 +9,14 @@ header {
 
 .gameEnd {
     background:linear-gradient(blue 0%,rgb(14, 248, 236) 25%, rgb(171, 243, 239) 50%, rgb(14, 248, 236) 75%, blue 100%);
+    margin-top: 10px;
+}
+
+.gradeDiv {
+    border-top: 2px solid grey;
+    display: none;
+    margin: 10px auto;
+    width: 50%;
+    padding-top: 10px;
+    color: grey;
 }
