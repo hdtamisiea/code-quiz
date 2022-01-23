@@ -12,13 +12,15 @@
 </head>
 
 <body class="bg-secondary">
-    <!-- header -->
+    <!-- header section -->
     <header id="header" class="container d-flex justify-content-around mt-3 border border-primary align-items-center">
+        <!-- highscore link -->
         <a href="#" id="highscores"></a>
+        <!-- timer for quiz -->
         <p id="timer"></p>
     </header>
 
-    <!-- landing information -->
+    <!-- main section/landing page with start button -->
     <main id="main" class="wrapper container border border-primary p-10 m-10 bg-white">
         <h1 class="text-center">Welcome to the Coding Quiz!</h1>
         <p>You wil be given 75 seconds to answer the following questions. The quicker you answer, the higher your score!
@@ -30,8 +32,9 @@
     <!-- quiz section -->
     <div class="quiz container border border-primary m-10 bg-white">
         <div class="row d-block align-items-center justify-content-center">
+            <!-- question -->
             <p class="col-sm-9 question mt-3 font-weight-bold">Question</p>
-
+            <!-- answers -->
             <div class="row justify-content-center">
                 <button class="btn btn-danger col-9 mb-2" id="answerA" onclick="grade('answerA')">A. </button>
                 <button class="btn btn-danger col-9 mb-2" id="answerB" onclick="grade('answerB')">B. </button>
@@ -41,12 +44,12 @@
         </div>
     </div>
 
-        <!-- finish game score and form -->
+        <!-- Notification that game is over as well as score -->
     <div class="gameEnd border border-primary p-3 container text-center">
         <h3>Quiz is Complete!</h3>
         <p id="yourScore"></p>
 
-        <!-- Highscore form submit-->
+        <!-- Place to capture user's initials and submit to leaderboard -->
         <div>
             <form> 
                 <label for="initials">Enter your initials:</label>
@@ -56,9 +59,10 @@
         </div>
     </div>
 
+    <!-- container to hold the "grade" so the user knows if they got the answer correct or incorrect -->
     <div id="grade" class="container bg-white mt-5 text-center font-weight-bold"></div>
 
-    <!-- highscores section -->
+    <!-- leaderboard section with options to return to quiz and clear leaderboard -->
     <div class="highscoresDiv container border border-success p-3 text-center bg-white">
         <h2 id="highscoresText" class="text-danger"><u>Highscores</u></h2>
         <div id="highscoresInfo"></div>

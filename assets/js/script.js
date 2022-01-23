@@ -221,4 +221,5 @@ var highscoresSec = function () {
     };
 }
 
+// Start Quiz!
 startQuiz();

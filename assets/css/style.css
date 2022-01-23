@@ -1,16 +1,22 @@
+/* most of the styling was completed with Bootstrap */
+
+/* global styling */
 body {
     font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
+/* background color to make the header with leaderboard link and countdown clock stand out */
 header {
     background-color: rgb(14, 248, 236);
 }
 
+/* styling for the end of game display */
 .gameEnd {
     background:linear-gradient(blue 0%,rgb(14, 248, 236) 25%, rgb(171, 243, 239) 50%, rgb(14, 248, 236) 75%, blue 100%);
     margin-top: 10px;
 }
 
+/* increasing font size for questions */
 .question {
     font-size: 1.5em;
 }
