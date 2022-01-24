@@ -43,6 +43,19 @@ function countdown() {
     quizQuestions();
 };
 
+// Function to begin questions and hide the landing page. Sets timer at 75 seconds.
+function startQuiz() {
+    timeLeft = 75;
+    main.style.display = 'block';
+    highscores.textContent = 'View High Scores';
+    gradeDiv.style.display = 'none';
+    gameEnd.style.display = 'none';
+    highscoresDiv.style.display = 'none';
+    quiz.style.display = 'none';
+    timer.textContent = 'Time: ' + timeLeft;
+    currentQuest = 0;
+};
+
 // questions and answers put into an array with correct answer listed
 var questions = [
     {
@@ -90,19 +103,6 @@ var questions = [
         correctAnswer: "answerB"
     },
 ];
-
-// Function to begin questions and hide the landing page. Sets timer at 75 seconds.
-function startQuiz() {
-    timeLeft = 75;
-    main.style.display = 'block';
-    highscores.textContent = 'View High Scores';
-    gradeDiv.style.display = 'none';
-    gameEnd.style.display = 'none';
-    highscoresDiv.style.display = 'none';
-    quiz.style.display = 'none';
-    timer.textContent = 'Time: ' + timeLeft;
-    currentQuest = 0;
-};
 
 // This actually displays the questions/answers on the page
 function quizQuestions() {
